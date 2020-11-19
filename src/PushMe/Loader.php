@@ -44,15 +44,15 @@ class Loader extends PluginBase implements Listener
         if ($block->getSide(Vector3::SIDE_DOWN)->getId() === $this->config->get("ID")) {
             if ($player->hasPermission("p.use")) {
                 for ($i = 1; $i <= 1000; $i++) {
-                    $player->knockBack($player, 0, $x, $z, $this->cfg->get("Power"));
+                    $player->knockBack($player, 0, $x, $z, $this->config->get("Power"));
                 }
                 $player->getLevel()->addSound(new FizzSound(new Vector3($player->getX(), $player->getY(), $player->getZ())));
             } else {
-                $player->sendTip($this->cfg->get("NoPerm_Msg"));
+                $player->sendTip($this->config->get("NoPerm_Msg"));
                 $player->getLevel()->addSound(new ClickSound(new Vector3($player->getX(), $player->getY(), $player->getZ())));
             }
-		}
-	}
+        }
+    }
 
     public function onDisable()
     {
