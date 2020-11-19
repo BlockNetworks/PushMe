@@ -20,12 +20,14 @@ use pocketmine\utils\Config;
 class Loader extends PluginBase implements Listener
 {
 
+    public $config;
+
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getServer()->getLogger()->info("PushMe Enabled");
 
-        $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML, [
+        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML, [
             "ID" => 152,
             "NoPerm_Msg" => "no permission",
             "Power" => 0.5
@@ -39,7 +41,7 @@ class Loader extends PluginBase implements Listener
         $x = $direction->getX();
         $z = $direction->getZ();
         $block = $event->getBlock();
-        if ($block->getSide(Vector3::SIDE_DOWN)->getId() === $this->cfg->get("ID")) {
+        if ($block->getSide(Vector3::SIDE_DOWN)->getId() === $this->config->get("ID")) {
             if ($player->hasPermission("p.use")) {
                 for ($i = 1; $i <= 1000; $i++) {
                     $player->knockBack($player, 0, $x, $z, $this->cfg->get("Power"));
