@@ -1,4 +1,6 @@
 # PushMe
-LBSG knockback block
+[![Download](https://img.shields.io/badge/download-latest-blue.svg)](https://github.com/BlockNetworks/PushMe/releases/latest)
 
-Simply place a redstone block and step on it! and watch the magic
+LBSG knockback block.
+
+Simply place a redstone block and step on it and watch the magic.
