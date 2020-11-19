@@ -1,10 +1,10 @@
 name: PushMe
 authors: UGuessedItxSync
 version: 1.0.1
-api: 2.0.0
+api: 3.15.0
 main: PushMe\Loader
 load: STARTUP
-description: "LBSG Booster alternative"
+description: LBSG Booster alternative
 
 permission:
   p.use:
